@@ -1,17 +1,55 @@
 body {
-  font-family: sans-serif;
-  overflow: hidden;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  overscroll-behavior: none;
+  font-family: 'Poppins', sans-serif;
 }
 #webgi-canvas {
   width: 100%;
   height: 100%;
-  border-radius: 0.5rem;
+  /* position: fixed; */
+  z-index: -10;
+  top: 0;
 }
-#webgi-canvas-container{
-  width: 80vw;
-  height: 80vh;
-  margin: 10vh 10vw;
-  border-radius: 0.5rem;
 
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+#webgi-canvas-container{
+  width: 100vw;
+  height: 100vh;
+  /* pointer-events: none; */
+  position: fixed;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  align-items: center;
 }
+
+#tweakpaneUiContainer {
+  display: none;
+}
+
+.navbar {
+  position: absolute;
+  display: flex;
+  align-content: space-between;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.buyNow {
+  font-family: 'Poppins', sans-serif;
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 10px 20px;
+  margin-right: 50px;
+  font-size: 1rem;
+}
+
+.logo {
+  margin-left: 50px;
+}
+
+/*SECTION 1*/
