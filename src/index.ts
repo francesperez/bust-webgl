@@ -1,30 +1,20 @@
 import {
     ViewerApp,
     AssetManagerPlugin,
-    GBufferPlugin,
-    timeout,
-    ProgressivePlugin,
     TonemapPlugin,
-    SSRPlugin,
-    SSAOPlugin,
-    DiamondPlugin,
-    FrameFadePlugin,
-    GLTFAnimationPlugin,
-    GroundPlugin,
-    BloomPlugin,
-    TemporalAAPlugin,
-    AnisotropyPlugin,
-    GammaCorrectionPlugin,
-
+    
     addBasePlugins,
-    ITexture, TweakpaneUiPlugin, AssetManagerBasicPopupPlugin, CanvasSnipperPlugin,
+    TweakpaneUiPlugin, AssetManagerBasicPopupPlugin, CanvasSnipperPlugin,
 
     IViewerPlugin,
 
-    // Color, // Import THREE.js internals
-    // Texture, // Import THREE.js internals
 } from "webgi";
 import "./styles.css";
+
+import gsap from "gsap";
+import {ScrollTrigger} from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 async function setupViewer(){
 
@@ -34,30 +24,18 @@ async function setupViewer(){
     const manager = await viewer.addPlugin(AssetManagerPlugin)
     await viewer.addPlugin(AssetManagerBasicPopupPlugin)
 
-    // Add plugins individually.
-    await viewer.addPlugin(GBufferPlugin)
-    await viewer.addPlugin(new ProgressivePlugin(32))
-    await viewer.addPlugin(new TonemapPlugin(!viewer.useRgbm))
-    await viewer.addPlugin(GammaCorrectionPlugin)
-    await viewer.addPlugin(SSRPlugin)
-    await viewer.addPlugin(SSAOPlugin)
-    await viewer.addPlugin(BloomPlugin)
 
-
-    // or use this to add all main ones at once.
     await addBasePlugins(viewer)
 
-    // Add more plugins not available in base, like CanvasSnipperPlugin which has helpers to download an image of the canvas.
     await viewer.addPlugin(CanvasSnipperPlugin)
 
-    // This must be called once after all plugins are added.
     viewer.renderer.refreshPipeline()
 
     await manager.addFromPath("./assets/bustXglossy.glb")
 
     viewer.getPlugin(TonemapPlugin)!.config!.clipBackground = true;
 
-// Uncomment later: this is in video #2
+// Uncomment later: this is in video 
     // viewer.scene.activeCamera.setCameraOptions({controlsEnabled: false});
 
     // Load an environment map if not set in the glb file
