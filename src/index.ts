@@ -41,7 +41,7 @@ async function setupViewer(){
 
     viewer.renderer.refreshPipeline()
 
-    await manager.addFromPath("./assets/scene2.glb")
+    await manager.addFromPath("./assets/unit01.glb")
 
     viewer.getPlugin(TonemapPlugin)!.config!.clipBackground = true;
 

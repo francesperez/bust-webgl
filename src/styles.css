@@ -4,6 +4,8 @@ body {
   padding: 0;
   overscroll-behavior: none;
   font-family: 'Poppins', sans-serif;
+  background: rgb(108, 2, 2);
+  color: white;
 }
 #webgi-canvas {
   width: 100%;
@@ -39,8 +41,8 @@ body {
 
 .buyNow {
   font-family: 'Poppins', sans-serif;
-  background: black;
-  color: white;
+  background: rgb(21, 214, 76);
+  color: rgb(0, 0, 0);
   border: none;
   border-radius: 50px;
   padding: 10px 20px;
@@ -60,10 +62,37 @@ body {
   align-items: center;
 }
 
+.container1 {
+  width: 360px;
+  margin-left: 15%;
+  margin-top: 70px;
+}
+
 .title1 {
-  padding: 40px;
-  font-size: 8rem;
+  font-size: 10rem;
   line-height: 8rem;
+  letter-spacing: -0.3rem;
+  width: 50%;
+  margin: 0 0 10px -10px;
+}
+
+.button--hero{
+  background: #21eb2b;
+  color: black;
+  border: none;
+  font-weight: 600;
+  border-radius: 50px;
+  padding: 15px 30px;
+  margin-top: 24px;
+  margin-right: 40px;
+  font-size: 0.6rem;
+  cursor: pointer;
+  transition: all 0.8s ease;
+}
+
+.button--hero:hover{
+  background: black;
+  color: white;
 }
 
 /* SECTION 2 */
@@ -86,7 +115,7 @@ position: relative;
 .custom-bg {
   width: 100%;
   height: 600px;
-  background: #eaeaca;
+  background: #9a240f;
   -webkit-transform: skew(20deg);
   -moz-transform: skew(20deg);
   -o-transform: skew(20deg);
