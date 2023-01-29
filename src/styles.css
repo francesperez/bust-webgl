@@ -96,3 +96,14 @@ position: relative;
   left: 0;
   z-index: -1;
 }
+
+/* SECTION 3 */
+.section3 {
+  margin-left: 40px;
+}
+
+.container3 {
+  width: 360px;
+  margin-left: 10%;
+  /* z-index: 1; */
+}
