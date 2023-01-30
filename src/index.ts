@@ -45,20 +45,7 @@ async function setupViewer(){
 
     viewer.getPlugin(TonemapPlugin)!.config!.clipBackground = true;
 
-// Uncomment later: this is in video 
-    // viewer.scene.activeCamera.setCameraOptions({controlsEnabled: false});
-
-    // // Load an environment map if not set in the glb file
-    // await viewer.scene.setEnvironment(
-    //     await manager.importer!.importSinglePath<ITexture>(
-    //         "./assets/environment.hdr"
-    //     )
-    // );
-
-    // Add some UI for tweak and testing.
-    // const uiPlugin = await viewer.addPlugin(TweakpaneUiPlugin)
-    // Add plugins to the UI to see their settings.
-    // uiPlugin.setupPlugins<IViewerPlugin>(TonemapPlugin, CanvasSnipperPlugin)
+    viewer.scene.activeCamera.setCameraOptions({controlsEnabled: false});
 
 
     function setupScrollAnimation(){
