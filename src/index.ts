@@ -47,6 +47,8 @@ async function setupViewer(){
 
     viewer.scene.activeCamera.setCameraOptions({controlsEnabled: false});
 
+    onUpdate();
+
 
     function setupScrollAnimation(){
         const tl = gsap.timeline();
@@ -122,6 +124,11 @@ async function setupViewer(){
             needsUpdate = false;
         }
     });
+
+    document.querySelector(".customize")?.addEventListener('click', () => {
+
+
+    }
 
 }
 
