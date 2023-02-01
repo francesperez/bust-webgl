@@ -125,13 +125,66 @@ async function setupViewer(){
         }
     });
 
-    document.querySelector(".customize")?.addEventListener('click', () => {
+    document.querySelector('.button--hero')?.addEventListener('click', () => {
+		const element = document.querySelector('.section2')
+		window.scrollTo({ top: element?.getBoundingClientRect().top, left: 0, behavior: 'smooth' })
+	})
 
+    document.querySelectorAll('.button--footer')?.forEach(item => {
+		item.addEventListener('click', () => {
+			window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+		})
+	})
 
+    // CUSTOMIZE
+    const sections = document.querySelector('.container') as HTMLElement;
+    const mainContainer = document.getElementById('webgi-canvas-container') as HTMLElement;
+	document.querySelector('.button--customize')?.addEventListener('click', () => {
+        sections.style.visibility = "hidden"
+        mainContainer.style.pointerEvents = "all"
+        document.body.style.cursor = "grab"
+
+        // gsap.to(position, {x: -2.6, y: 0.2, z: -9.6, duration: 2, ease: "power3.inOut", onUpdate})
+        // gsap.to(target, {x: -0.15, y: 1.18 , z: 0.12, duration: 2, ease: "power3.inOut", onUpdate, onComplete: enableControlers})
+	})
+
+    // function enableControlers(){
+    //     exitButton.style.visibility = "visible"
+    //     customizerInterface.style.visibility = "visible"
+    //     viewer.scene.activeCamera.setCameraOptions({controlsEnabled: true})
     }
 
-}
 
+    // EXIT CUSTOMIZER
+	// exitButton.addEventListener('click', () => {
+    //     gsap.to(position, {x: -3.4, y: 9.6, z: 1.71, duration: 1, ease: "power3.inOut", onUpdate})
+    //     gsap.to(target, {x: -1.5, y: 2.13 , z: -0.4, duration: 1, ease: "power3.inOut", onUpdate})
+
+    //     viewer.scene.activeCamera.setCameraOptions({controlsEnabled: false})
+    //     sections.style.visibility = "visible"
+    //     mainContainer.style.pointerEvents = "none"
+    //     document.body.style.cursor = "default"
+    //     exitButton.style.visibility = "hidden"
+    //     customizerInterface.style.visibility = "hidden"
+	// })
+
+    // document.querySelector('.button--colors.black')?.addEventListener('click', () => {
+	// 	changeColor(new Color(0x383830).convertSRGBToLinear())
+    // })
+
+    // document.querySelector('.button--colors.red')?.addEventListener('click', () => {
+	// 	changeColor(new Color(0xfe2d2d).convertSRGBToLinear())
+    // })
+
+    // document.querySelector('.button--colors.yellow')?.addEventListener('click', () => {
+	// 	changeColor(new Color(0xffffff).convertSRGBToLinear())
+    // })
+
+    // function changeColor(_colorToBeChanged: Color){
+    //     drillMaterial.color = _colorToBeChanged;
+    //     viewer.scene.setDirty()
+    // }
+// }
 
 
 
